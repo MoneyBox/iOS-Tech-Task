@@ -16,6 +16,27 @@
 		B2CA47672794D69A0041B3A5 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CA47662794D69A0041B3A5 /* StubData.swift */; };
 		B2CA47712794D8E50041B3A5 /* LoginSucceed.json in Resources */ = {isa = PBXBuildFile; fileRef = B2CA47692794D6D70041B3A5 /* LoginSucceed.json */; };
 		B2CA47B42796052F0041B3A5 /* Accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = B2CA47B2279604A10041B3A5 /* Accounts.json */; };
+		ED3324AB28A9C41400649D3B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ED3324AA28A9C41400649D3B /* IQKeyboardManagerSwift */; };
+		ED3324B128A9CA9300649D3B /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = ED3324B028A9CA9300649D3B /* Reusable */; };
+		ED3324B428A9CB5C00649D3B /* ViewModelBasedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3324B328A9CB5C00649D3B /* ViewModelBasedProtocol.swift */; };
+		ED3324B628A9CBEA00649D3B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3324B528A9CBEA00649D3B /* LoginViewModel.swift */; };
+		ED3324B928AA7C5B00649D3B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3324B828AA7C5B00649D3B /* ActivityIndicator.swift */; };
+		ED3324BB28AA823600649D3B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3324BA28AA823600649D3B /* UIViewController+Extension.swift */; };
+		ED3324BD28AA864400649D3B /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3324BC28AA864400649D3B /* Products.storyboard */; };
+		ED3324BF28AA932600649D3B /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3324BE28AA932600649D3B /* ProductsViewModel.swift */; };
+		ED3324C328AAF6AF00649D3B /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3324C128AAF6AF00649D3B /* ProductTableViewCell.swift */; };
+		ED3324C428AAF6AF00649D3B /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED3324C228AAF6AF00649D3B /* ProductTableViewCell.xib */; };
+		ED3324C828AB2EF300649D3B /* ProductTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3324C728AB2EF300649D3B /* ProductTableHeaderView.swift */; };
+		ED3324CA28AB2F1300649D3B /* ProductTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED3324C928AB2F1300649D3B /* ProductTableHeaderView.xib */; };
+		ED48ADCC28A95FE3004B9246 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED48ADCB28A95FE3004B9246 /* ProductsViewController.swift */; };
+		ED48ADCE28A96006004B9246 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED48ADCD28A96006004B9246 /* ProductDetailsViewController.swift */; };
+		ED58513528ABF6E000B2082E /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58513428ABF6E000B2082E /* ProductDetailsViewModel.swift */; };
+		ED58513728ABF75200B2082E /* ProductDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED58513628ABF75200B2082E /* ProductDetails.storyboard */; };
+		ED58513928AC4BE100B2082E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58513828AC4BE100B2082E /* UIView+Extension.swift */; };
+		ED58513E28AD294900B2082E /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58513D28AD294900B2082E /* LoginViewModelTests.swift */; };
+		ED58514028AD2C6C00B2082E /* DataProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58513B28AC7A8500B2082E /* DataProviderMock.swift */; };
+		ED58514B28ADA0CD00B2082E /* ProductsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58514A28ADA0CD00B2082E /* ProductsViewModelTests.swift */; };
+		ED58514E28ADA52600B2082E /* ProductDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58514D28ADA52600B2082E /* ProductDetailsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +62,25 @@
 		B2CA47662794D69A0041B3A5 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
 		B2CA47692794D6D70041B3A5 /* LoginSucceed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LoginSucceed.json; sourceTree = "<group>"; };
 		B2CA47B2279604A10041B3A5 /* Accounts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Accounts.json; sourceTree = "<group>"; };
+		ED3324B328A9CB5C00649D3B /* ViewModelBasedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBasedProtocol.swift; sourceTree = "<group>"; };
+		ED3324B528A9CBEA00649D3B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		ED3324B828AA7C5B00649D3B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		ED3324BA28AA823600649D3B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		ED3324BC28AA864400649D3B /* Products.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
+		ED3324BE28AA932600649D3B /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
+		ED3324C128AAF6AF00649D3B /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		ED3324C228AAF6AF00649D3B /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		ED3324C728AB2EF300649D3B /* ProductTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableHeaderView.swift; sourceTree = "<group>"; };
+		ED3324C928AB2F1300649D3B /* ProductTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableHeaderView.xib; sourceTree = "<group>"; };
+		ED48ADCB28A95FE3004B9246 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		ED48ADCD28A96006004B9246 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		ED58513428ABF6E000B2082E /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
+		ED58513628ABF75200B2082E /* ProductDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetails.storyboard; sourceTree = "<group>"; };
+		ED58513828AC4BE100B2082E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		ED58513B28AC7A8500B2082E /* DataProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderMock.swift; sourceTree = "<group>"; };
+		ED58513D28AD294900B2082E /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		ED58514A28ADA0CD00B2082E /* ProductsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModelTests.swift; sourceTree = "<group>"; };
+		ED58514D28ADA52600B2082E /* ProductDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +89,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B26EF47828881E7F003BFDF2 /* Networking in Frameworks */,
+				ED3324AB28A9C41400649D3B /* IQKeyboardManagerSwift in Frameworks */,
+				ED3324B128A9CA9300649D3B /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +126,13 @@
 		B2CA46CA279350880041B3A5 /* MoneyBox */ = {
 			isa = PBXGroup;
 			children = (
-				B228EA6A2880B30B00B35F16 /* Login.storyboard */,
-				B228EA692880B30B00B35F16 /* LoginViewController.swift */,
 				B2CA46CB279350880041B3A5 /* AppDelegate.swift */,
 				B2CA46D42793508A0041B3A5 /* Assets.xcassets */,
-				B2CA46D62793508A0041B3A5 /* LaunchScreen.storyboard */,
 				B2CA46D92793508A0041B3A5 /* Info.plist */,
+				ED48ADC828A95F96004B9246 /* Screens */,
+				ED3324B728AA7C2F00649D3B /* Utilities */,
+				ED3324B228A9CB3A00649D3B /* Protocols */,
+				ED3324AC28A9C87A00649D3B /* Extensions */,
 			);
 			path = MoneyBox;
 			sourceTree = "<group>";
@@ -98,6 +141,10 @@
 			isa = PBXGroup;
 			children = (
 				B2CA47662794D69A0041B3A5 /* StubData.swift */,
+				ED58513C28AD28E500B2082E /* Login */,
+				ED58514928ADA08100B2082E /* Products */,
+				ED58514C28ADA4FC00B2082E /* Product Details */,
+				ED58513A28AC7A8500B2082E /* Mocks */,
 				B2CA47682794D6AC0041B3A5 /* ResponseJsons */,
 			);
 			path = MoneyBoxTests;
@@ -120,6 +167,132 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		ED3324AC28A9C87A00649D3B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED3324BA28AA823600649D3B /* UIViewController+Extension.swift */,
+				ED58513828AC4BE100B2082E /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED3324B228A9CB3A00649D3B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				ED3324B328A9CB5C00649D3B /* ViewModelBasedProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		ED3324B728AA7C2F00649D3B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ED3324B828AA7C5B00649D3B /* ActivityIndicator.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		ED3324C028AAF61B00649D3B /* ProductTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				ED3324C228AAF6AF00649D3B /* ProductTableViewCell.xib */,
+				ED3324C128AAF6AF00649D3B /* ProductTableViewCell.swift */,
+			);
+			path = ProductTableViewCell;
+			sourceTree = "<group>";
+		};
+		ED3324C628AB2DA300649D3B /* ProductTableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				ED3324C928AB2F1300649D3B /* ProductTableHeaderView.xib */,
+				ED3324C728AB2EF300649D3B /* ProductTableHeaderView.swift */,
+			);
+			path = ProductTableHeaderView;
+			sourceTree = "<group>";
+		};
+		ED48ADC728A95B40004B9246 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B228EA6A2880B30B00B35F16 /* Login.storyboard */,
+				B228EA692880B30B00B35F16 /* LoginViewController.swift */,
+				ED3324B528A9CBEA00649D3B /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		ED48ADC828A95F96004B9246 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				ED48ADD028A9601B004B9246 /* Launch Screen */,
+				ED48ADC728A95B40004B9246 /* Login */,
+				ED48ADC928A95F9F004B9246 /* Products */,
+				ED48ADCA28A95FAA004B9246 /* Product Details */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		ED48ADC928A95F9F004B9246 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED3324BC28AA864400649D3B /* Products.storyboard */,
+				ED48ADCB28A95FE3004B9246 /* ProductsViewController.swift */,
+				ED3324BE28AA932600649D3B /* ProductsViewModel.swift */,
+				ED3324C628AB2DA300649D3B /* ProductTableHeaderView */,
+				ED3324C028AAF61B00649D3B /* ProductTableViewCell */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		ED48ADCA28A95FAA004B9246 /* Product Details */ = {
+			isa = PBXGroup;
+			children = (
+				ED58513628ABF75200B2082E /* ProductDetails.storyboard */,
+				ED48ADCD28A96006004B9246 /* ProductDetailsViewController.swift */,
+				ED58513428ABF6E000B2082E /* ProductDetailsViewModel.swift */,
+			);
+			path = "Product Details";
+			sourceTree = "<group>";
+		};
+		ED48ADD028A9601B004B9246 /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B2CA46D62793508A0041B3A5 /* LaunchScreen.storyboard */,
+			);
+			path = "Launch Screen";
+			sourceTree = "<group>";
+		};
+		ED58513A28AC7A8500B2082E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				ED58513B28AC7A8500B2082E /* DataProviderMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		ED58513C28AD28E500B2082E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				ED58513D28AD294900B2082E /* LoginViewModelTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		ED58514928ADA08100B2082E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED58514A28ADA0CD00B2082E /* ProductsViewModelTests.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		ED58514C28ADA4FC00B2082E /* Product Details */ = {
+			isa = PBXGroup;
+			children = (
+				ED58514D28ADA52600B2082E /* ProductDetailsTests.swift */,
+			);
+			path = "Product Details";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +311,8 @@
 			name = MoneyBox;
 			packageProductDependencies = (
 				B26EF47728881E7F003BFDF2 /* Networking */,
+				ED3324AA28A9C41400649D3B /* IQKeyboardManagerSwift */,
+				ED3324B028A9CA9300649D3B /* Reusable */,
 			);
 			productName = MoneyBox;
 			productReference = B2CA46C8279350880041B3A5 /* MoneyBox.app */;
@@ -190,6 +365,8 @@
 			);
 			mainGroup = B2CA46BF279350880041B3A5;
 			packageReferences = (
+				ED3324A928A9C41400649D3B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				ED3324AF28A9CA9200649D3B /* XCRemoteSwiftPackageReference "Reusable" */,
 			);
 			productRefGroup = B2CA46C9279350880041B3A5 /* Products */;
 			projectDirPath = "";
@@ -206,10 +383,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED3324CA28AB2F1300649D3B /* ProductTableHeaderView.xib in Resources */,
 				B2CA46D82793508A0041B3A5 /* LaunchScreen.storyboard in Resources */,
 				B2CA47712794D8E50041B3A5 /* LoginSucceed.json in Resources */,
+				ED3324BD28AA864400649D3B /* Products.storyboard in Resources */,
 				B2CA46D52793508A0041B3A5 /* Assets.xcassets in Resources */,
+				ED58513728ABF75200B2082E /* ProductDetails.storyboard in Resources */,
 				B228EA6C2880B30B00B35F16 /* Login.storyboard in Resources */,
+				ED3324C428AAF6AF00649D3B /* ProductTableViewCell.xib in Resources */,
 				B2CA47B42796052F0041B3A5 /* Accounts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,8 +409,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED3324BB28AA823600649D3B /* UIViewController+Extension.swift in Sources */,
+				ED58513928AC4BE100B2082E /* UIView+Extension.swift in Sources */,
+				ED3324B428A9CB5C00649D3B /* ViewModelBasedProtocol.swift in Sources */,
 				B2CA46CC279350880041B3A5 /* AppDelegate.swift in Sources */,
+				ED3324C328AAF6AF00649D3B /* ProductTableViewCell.swift in Sources */,
+				ED3324B628A9CBEA00649D3B /* LoginViewModel.swift in Sources */,
+				ED48ADCE28A96006004B9246 /* ProductDetailsViewController.swift in Sources */,
+				ED3324C828AB2EF300649D3B /* ProductTableHeaderView.swift in Sources */,
+				ED3324B928AA7C5B00649D3B /* ActivityIndicator.swift in Sources */,
+				ED48ADCC28A95FE3004B9246 /* ProductsViewController.swift in Sources */,
+				ED3324BF28AA932600649D3B /* ProductsViewModel.swift in Sources */,
 				B228EA6B2880B30B00B35F16 /* LoginViewController.swift in Sources */,
+				ED58513528ABF6E000B2082E /* ProductDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +429,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED58514028AD2C6C00B2082E /* DataProviderMock.swift in Sources */,
+				ED58513E28AD294900B2082E /* LoginViewModelTests.swift in Sources */,
 				B2CA47672794D69A0041B3A5 /* StubData.swift in Sources */,
+				ED58514B28ADA0CD00B2082E /* ProductsViewModelTests.swift in Sources */,
+				ED58514E28ADA52600B2082E /* ProductDetailsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +517,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -375,6 +572,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -386,7 +584,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7DM2UT7C8G;
+				DEVELOPMENT_TEAM = 6CLLS8GM2C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoneyBox/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -415,7 +613,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7DM2UT7C8G;
+				DEVELOPMENT_TEAM = 6CLLS8GM2C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoneyBox/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -509,10 +707,39 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		ED3324A928A9C41400649D3B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		ED3324AF28A9CA9200649D3B /* XCRemoteSwiftPackageReference "Reusable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Reusable.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		B26EF47728881E7F003BFDF2 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;
+		};
+		ED3324AA28A9C41400649D3B /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED3324A928A9C41400649D3B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		ED3324B028A9CA9300649D3B /* Reusable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED3324AF28A9CA9200649D3B /* XCRemoteSwiftPackageReference "Reusable" */;
+			productName = Reusable;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

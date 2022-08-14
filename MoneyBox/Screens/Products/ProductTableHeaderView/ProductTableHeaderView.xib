@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductTableHeaderView" customModule="MoneyBox" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="410" height="195"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHb-oU-Jf1">
+                    <rect key="frame" x="16" y="62" width="378" height="46"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                    <color key="textColor" name="FontColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Plan Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwY-5O-tQf">
+                    <rect key="frame" x="16" y="127" width="378" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="CQk-M7-oRz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" name="FontColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Oy-DI-i7e">
+                    <rect key="frame" x="16" y="143" width="378" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="0tg-I0-CxO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                    <color key="textColor" name="FontColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="cHb-oU-Jf1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="62" id="06i-iD-ghR"/>
+                <constraint firstAttribute="trailing" secondItem="4Oy-DI-i7e" secondAttribute="trailing" constant="16" id="6yB-3y-8fq"/>
+                <constraint firstAttribute="trailing" secondItem="wwY-5O-tQf" secondAttribute="trailing" constant="16" id="NeJ-72-b6R"/>
+                <constraint firstItem="4Oy-DI-i7e" firstAttribute="top" secondItem="wwY-5O-tQf" secondAttribute="bottom" id="a1I-RP-CoT"/>
+                <constraint firstItem="wwY-5O-tQf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="hat-vo-pDb"/>
+                <constraint firstItem="4Oy-DI-i7e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="koA-zH-Hf6"/>
+                <constraint firstItem="cHb-oU-Jf1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="pY5-Vp-FcZ"/>
+                <constraint firstItem="wwY-5O-tQf" firstAttribute="top" secondItem="cHb-oU-Jf1" secondAttribute="bottom" constant="19" id="q2f-yr-5va"/>
+                <constraint firstAttribute="trailing" secondItem="cHb-oU-Jf1" secondAttribute="trailing" constant="16" id="r5n-P6-92O"/>
+                <constraint firstAttribute="bottom" secondItem="4Oy-DI-i7e" secondAttribute="bottom" constant="16" id="xa9-NG-HQJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="greetingsLabel" destination="cHb-oU-Jf1" id="kVy-xR-18N"/>
+                <outlet property="totalPlanValueAmountLabel" destination="4Oy-DI-i7e" id="H3L-Sg-2Kv"/>
+            </connections>
+            <point key="canvasLocation" x="128.98550724637681" y="71.986607142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="FontColor">
+            <color red="0.15700000524520874" green="0.37299999594688416" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
