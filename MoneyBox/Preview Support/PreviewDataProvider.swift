@@ -1,40 +1,30 @@
 //
-//  StubData.swift
-//  MoneyBoxTests
+//  PreviewDataProvider.swift
+//  MoneyBox
 //
-//  Created by Zeynep Kara on 17.01.2022.
+//  Created by George Woodham on 25/08/23.
 //
 
 import Foundation
-@testable import MoneyBox
-@testable import Networking
+import Networking
 
-class StubDataProvider: DataProviderLogic {
-    
-    var forceError: Bool = false
+#if DEBUG
+class PreviewDataProvider: DataProviderLogic {
     
     func login(request: Networking.LoginRequest, completion: @escaping ((Result<Networking.LoginResponse, Error>) -> Void)) {
-        if forceError {
-            completion(.failure(NSError.error(with: "Forced stub error")))
-        } else {
-            StubData.read(file: "LoginSucceed", callback: completion)
-        }
+        StubData.read(file: "LoginSucceed", callback: completion)
     }
     
     func fetchProducts(completion: @escaping ((Result<Networking.AccountResponse, Error>) -> Void)) {
-        if forceError {
-            completion(.failure(NSError.error(with: "Forced stub error")))
-        } else {
-            StubData.read(file: "Accounts", callback: completion)
-        }
+        StubData.read(file: "Accounts", callback: completion)
     }
     
     func addMoney(request: Networking.OneOffPaymentRequest, completion: @escaping ((Result<Networking.OneOffPaymentResponse, Error>) -> Void)) {
-        StubData.read(file: "AddMoney", callback: completion)
+        fatalError("Not implemented.")
     }
 }
 
-struct StubData {
+private struct StubData {
     static func read<V: Decodable>(file: String, callback: @escaping (Result<V, Error>) -> Void) {
         if let path = Bundle.main.path(forResource: file, ofType: "json") {
             do {
@@ -49,3 +39,4 @@ struct StubData {
         }
     }
 }
+#endif
