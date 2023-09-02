@@ -20,11 +20,13 @@ final class LoginViewController: UIViewController {
         let textField = PaddedTextField()
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .white
-        textField.placeholder = "Email Address"
+        textField.attributedPlaceholder = NSAttributedString(string: "Email Address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.placeholderTextColor])
         textField.textContentType = .emailAddress
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textColor = .black
         textField.delegate = self
+        textField.font = UIFont.preferredFont(forTextStyle: .title3)
+        textField.adjustsFontForContentSizeCategory = true
         return textField
     }()
     
@@ -32,24 +34,61 @@ final class LoginViewController: UIViewController {
         let textField = PaddedTextField()
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .white
-        textField.placeholder = "Password"
+        textField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.placeholderTextColor])
         textField.textContentType = .password
         textField.isSecureTextEntry = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textColor = .black
         textField.delegate = self
+        textField.font = UIFont.preferredFont(forTextStyle: .title3)
+        textField.adjustsFontForContentSizeCategory = true
         return textField
     }()
     
     var loginButton: UIButton = {
         let button = UIButton()
-        button.setTitle("LOGIN", for: .normal)
+        button.setTitle("Login", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = UIColor(red: 0.12, green: 0.82, blue: 0.63, alpha: 1.0)
         button.layer.cornerCurve = .continuous
         button.layer.cornerRadius = 9
         button.setTitleColor(.gray, for: .selected)
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
+        button.contentEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         return button
+    }()
+    
+    private var stackView: UIStackView = {
+        var stack = UIStackView()
+        stack.axis = .vertical
+        stack.distribution = .fill
+        stack.spacing = 8
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    
+    private let loginTitle: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "SF Pro Text Bold", size: 34)
+        label.text = "Login"
+        label.textColor = .lightTeal
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = false
+        return label
+    }()
+    
+    private let moneyBoxLogo: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "moneybox"))
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private let backgroundCurveView: UIView = {
+        let view = BackgroundCurveView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     // MARK: - Init
@@ -64,10 +103,16 @@ final class LoginViewController: UIViewController {
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
-        self.view.backgroundColor = UIColor(named: "background_color")
-        self.view.addSubview(emailTextField)
-        self.view.addSubview(passwordTextField)
-        self.view.addSubview(loginButton)
+        view.addSubview(backgroundCurveView)
+        view.addSubview(loginTitle)
+        view.addSubview(stackView)
+        view.addSubview(moneyBoxLogo)
+        
+        stackView.addArrangedSubview(emailTextField)
+        stackView.addArrangedSubview(passwordTextField)
+        view.addSubview(loginButton)
+        
+        view.backgroundColor = UIColor(named: "background_color")
         
         subscribe()
         
@@ -76,21 +121,32 @@ final class LoginViewController: UIViewController {
     
     private func layoutViews() {
         NSLayoutConstraint.activate([
-            // MARK: Email Field Constraints
-            emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            // MARK: Password Field Constraints
-            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
-            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            // MARK: Background View
+            backgroundCurveView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundCurveView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundCurveView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundCurveView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            // MARK: Moneybox Logo
+            moneyBoxLogo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            moneyBoxLogo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            moneyBoxLogo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            // MARK: Title Label
+            loginTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            loginTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            loginTitle.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -20),
+            
+            // MARK: Stack View Constraints
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -150),
             
             // MARK: Login Button Constraints
-            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            loginButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20),
             loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            loginButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -103,7 +159,14 @@ final class LoginViewController: UIViewController {
                 self.loginButton.backgroundColor = enabled ? UIColor(red: 0.12, green: 0.82, blue: 0.63, alpha: 1.0) : .systemGray
             }
             .store(in: &cancellables)
+     
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
+    }
+    
+    // MARK: - Target Action
+    @objc private func loginButtonTapped() {
+        viewModel.loginTapped()
     }
 }
 
