@@ -14,18 +14,18 @@ final class LoginCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     
-    private var networkService: DataProviderLogic
+    private var dataProvider: DataProviderLogic
     
-    var userLoggedIn: ((String) -> Void)?
+    var userDidLogInClosure: ((Networking.LoginResponse.User) -> Void)?
  
     // MARK: - Init
-    init(navigationController: UINavigationController, networkService: DataProviderLogic) {
+    init(navigationController: UINavigationController, dataProvider: DataProviderLogic) {
         self.navigationController = navigationController
-        self.networkService = networkService
+        self.dataProvider = dataProvider
     }
     
     func start() {
-        let viewModel = LoginViewModel(networkService: networkService)
+        let viewModel = LoginViewModel(dataProvider: dataProvider)
         
         viewModel.loginAction = { [weak self] user in
             self?.navigateToAccounts(user: user)
@@ -33,12 +33,14 @@ final class LoginCoordinator: Coordinator {
         
         let viewController = LoginViewController(loginViewModel:
         viewModel)
-
-        navigationController.pushViewController(viewController, animated: false)
+        
+        DispatchQueue.main.async {
+            self.navigationController.pushViewController(viewController, animated: false)
+        }
     }
     
-    private func navigateToAccounts(user: String) {
-        userLoggedIn?(user)
+    private func navigateToAccounts(user: Networking.LoginResponse.User) {
+        userDidLogInClosure?(user)
     }
     
 }

@@ -9,32 +9,34 @@ import Combine
 import Foundation
 import Networking
 
-enum LoginState {
+enum LoginViewState {
     case ready
     case loading
     case success
-    case error([Error])
+    case error(String)
 }
 
 final class LoginViewModel {
     
     // MARK: - Properties
     private var cancellables: Set<AnyCancellable> = []
-    private let networkService: DataProviderLogic
+    private let dataProvider: DataProviderLogic
     private let networkSession: SessionManager = SessionManager()
+    
+//    private let networkManager: NetworkManagable
 
     // MARK: - Coordinator Closures
-    var loginAction: ((String) -> Void)?
+    var loginAction: ((Networking.LoginResponse.User) -> Void)?
     
-    // Exposed API
+    // MARK: - Exposed API
     public var emailFieldText: CurrentValueSubject<String, Never> = .init("")
     public var passwordFieldText: CurrentValueSubject<String, Never> = .init("")
     public var loginButtonEnabled: CurrentValueSubject<Bool, Never> = .init(false)
-    public var state: CurrentValueSubject<LoginState, Never> = .init(.ready)
+    public var state: CurrentValueSubject<LoginViewState, Never> = .init(.ready)
     
     // MARK: - Init
-    init(networkService: DataProviderLogic) {
-        self.networkService = networkService
+    init(dataProvider: DataProviderLogic) {
+        self.dataProvider = dataProvider
         subscribe()
     }
     
@@ -54,29 +56,24 @@ final class LoginViewModel {
     
     // MARK: - Exposed Functions
     func loginTapped() {
+        
+        guard loginButtonEnabled.value else {
+            return
+        }
+        
         // Set state to loading to lock UI.
         state.value = .loading
         
         // Create request
         let loginRequest = LoginRequest(email: emailFieldText.value, password: passwordFieldText.value)
         
-        networkService.login(request: loginRequest) { [weak self] result in
+        dataProvider.login(request: loginRequest) { [weak self] result in
             switch result {
-            case .success(let loginResponse):
-                print("🐸 Auth succeeded", loginResponse)
-                self?.networkSession.setUserToken(loginResponse.session.bearerToken)
-                
-                self?.networkService.fetchProducts { result in
-                    switch result {
-                    case .success(let account):
-                        print("🐶", account)
-                    case .failure(let error):
-                        print("🥶", error.localizedDescription)
-                    }
-                }
-                
+            case .success(let response):
+                self?.state.send(.success)
+                self?.loginAction?(response.user)
             case .failure(let error):
-                print("😡 Auth failed", error.localizedDescription)
+                self?.state.send(.error(error.localizedDescription))
             }
         }
         

@@ -13,14 +13,15 @@ final class RootCoordinator: Coordinator {
     // MARK: - Properties
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
-    var networkService: DataProviderLogic
+    var dataProvider: DataProviderLogic
+    var user: Networking.LoginResponse.User?
     
     private var isLoggedIn = false // This would perform some auth checks in a full app
     
     // MARK: - Init
-    init(navigationController: UINavigationController, networkService: DataProviderLogic) {
+    init(navigationController: UINavigationController, dataProvider: DataProviderLogic) {
         self.navigationController = navigationController
-        self.networkService = networkService
+        self.dataProvider = dataProvider
     }
     
     func start() {
@@ -28,16 +29,25 @@ final class RootCoordinator: Coordinator {
             // Go to Accounts page OR Show quick pin page
         } else {
             // Go to Login page
-            let loginCoordinator = LoginCoordinator(navigationController: navigationController, networkService: networkService)
+            let loginCoordinator = LoginCoordinator(navigationController: navigationController, dataProvider: dataProvider)
+            
+            loginCoordinator.userDidLogInClosure = { [weak self] user in
+                self?.user = user
+                self?.navigateToMyAccount()
+                self?.childCoordinators.removeAll()
+            }
             
             loginCoordinator.start()
-            
-            
-            
-            
-//            let viewController = LoginViewController(loginViewModel: LoginViewModel(networkService: networkService))
-//            navigationController.pushViewController(viewController, animated: false)
+            childCoordinators.append(loginCoordinator)
         }
+    }
+    
+    private func navigateToMyAccount() {
+        guard let user = user else { return }
+        
+        let myAccountCoordinator = AccountsCoordinator(navigationController: navigationController, dataProvider: dataProvider, user: user)
+        myAccountCoordinator.start()
+        childCoordinators.append(myAccountCoordinator)
     }
     
 }
