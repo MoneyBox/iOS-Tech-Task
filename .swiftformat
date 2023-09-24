@@ -1,0 +1,24 @@
+# swiftformat rules https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md
+
+# file options
+
+--exclude fastlane
+
+# format options
+
+--indent 4
+--tabwidth 4
+
+--allman false
+--commas inline
+--ifdef indent
+--indentcase false
+--patternlet inline
+--redundanttype infer-locals-only
+--stripunusedargs closure-only
+--typeblanklines preserve
+
+# rules
+
+--disable wrapMultilineStatementBraces
+
