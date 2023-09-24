@@ -7,9 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A52022682ABCA0F500EB97A3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52022672ABCA0F500EB97A3 /* LoginViewModel.swift */; };
+		A520226C2ABCA71700EB97A3 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520226B2ABCA71700EB97A3 /* LoginUseCase.swift */; };
+		A520226E2ABCAD5700EB97A3 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520226D2ABCAD5700EB97A3 /* AccountsViewController.swift */; };
+		A52022712ABCADB700EB97A3 /* AccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52022702ABCADB700EB97A3 /* AccountsViewModel.swift */; };
+		A52022732ABCADDB00EB97A3 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52022722ABCADDB00EB97A3 /* AccountViewController.swift */; };
+		A52022762ABCADF200EB97A3 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52022752ABCADF200EB97A3 /* AccountViewModel.swift */; };
+		A520227B2ABCDCC500EB97A3 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520227A2ABCDCC500EB97A3 /* LoginRepository.swift */; };
+		A5B3FA762ABC4A2900D27B69 /* Networking in Resources */ = {isa = PBXBuildFile; fileRef = A5B3FA742ABC4A2800D27B69 /* Networking */; };
+		A5B3FA772ABC4A2900D27B69 /* MBUI in Resources */ = {isa = PBXBuildFile; fileRef = A5B3FA752ABC4A2900D27B69 /* MBUI */; };
+		A5B3FA7A2ABC4A3500D27B69 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = A5B3FA792ABC4A3500D27B69 /* Networking */; };
+		A5B3FA7C2ABC4A3500D27B69 /* MBUI in Frameworks */ = {isa = PBXBuildFile; productRef = A5B3FA7B2ABC4A3500D27B69 /* MBUI */; };
 		B228EA6B2880B30B00B35F16 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228EA692880B30B00B35F16 /* LoginViewController.swift */; };
 		B228EA6C2880B30B00B35F16 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B228EA6A2880B30B00B35F16 /* Login.storyboard */; };
-		B26EF47828881E7F003BFDF2 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = B26EF47728881E7F003BFDF2 /* Networking */; };
 		B2CA46CC279350880041B3A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CA46CB279350880041B3A5 /* AppDelegate.swift */; };
 		B2CA46D52793508A0041B3A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2CA46D42793508A0041B3A5 /* Assets.xcassets */; };
 		B2CA46D82793508A0041B3A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2CA46D62793508A0041B3A5 /* LaunchScreen.storyboard */; };
@@ -29,9 +39,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A52022672ABCA0F500EB97A3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A520226B2ABCA71700EB97A3 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		A520226D2ABCAD5700EB97A3 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
+		A52022702ABCADB700EB97A3 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
+		A52022722ABCADDB00EB97A3 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		A52022752ABCADF200EB97A3 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		A520227A2ABCDCC500EB97A3 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		A5B3FA742ABC4A2800D27B69 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Networking; path = Packages/Networking; sourceTree = "<group>"; };
+		A5B3FA752ABC4A2900D27B69 /* MBUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MBUI; path = Packages/MBUI; sourceTree = "<group>"; };
 		B228EA692880B30B00B35F16 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B228EA6A2880B30B00B35F16 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		B24EED92288ED5740016C233 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		B2CA46C8279350880041B3A5 /* MoneyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2CA46CB279350880041B3A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2CA46D42793508A0041B3A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,7 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B26EF47828881E7F003BFDF2 /* Networking in Frameworks */,
+				A5B3FA7A2ABC4A3500D27B69 /* Networking in Frameworks */,
+				A5B3FA7C2ABC4A3500D27B69 /* MBUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +81,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A52022692ABCA12200EB97A3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A52022672ABCA0F500EB97A3 /* LoginViewModel.swift */,
+				B228EA692880B30B00B35F16 /* LoginViewController.swift */,
+				B228EA6A2880B30B00B35F16 /* Login.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A520226F2ABCAD6700EB97A3 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				A52022702ABCADB700EB97A3 /* AccountsViewModel.swift */,
+				A520226D2ABCAD5700EB97A3 /* AccountsViewController.swift */,
+			);
+			path = Accounts;
+			sourceTree = "<group>";
+		};
+		A52022742ABCADE100EB97A3 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				A52022752ABCADF200EB97A3 /* AccountViewModel.swift */,
+				A52022722ABCADDB00EB97A3 /* AccountViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		A52022792ABCDC4600EB97A3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A520226B2ABCA71700EB97A3 /* LoginUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A520227C2ABCDCCA00EB97A3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A520227A2ABCDCC500EB97A3 /* LoginRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A520227D2ABCDCE800EB97A3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A52022742ABCADE100EB97A3 /* Account */,
+				A520226F2ABCAD6700EB97A3 /* Accounts */,
+				A5B3FA7D2ABC4A4600D27B69 /* Login */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A5B3FA782ABC4A3500D27B69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5B3FA7D2ABC4A4600D27B69 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A52022792ABCDC4600EB97A3 /* Domain */,
+				A520227C2ABCDCCA00EB97A3 /* Data */,
+				A52022692ABCA12200EB97A3 /* Presentation */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		B2CA46BF279350880041B3A5 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +159,7 @@
 				B2CA46CA279350880041B3A5 /* MoneyBox */,
 				B2CA46E12793508A0041B3A5 /* MoneyBoxTests */,
 				B2CA46C9279350880041B3A5 /* Products */,
+				A5B3FA782ABC4A3500D27B69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,8 +175,7 @@
 		B2CA46CA279350880041B3A5 /* MoneyBox */ = {
 			isa = PBXGroup;
 			children = (
-				B228EA6A2880B30B00B35F16 /* Login.storyboard */,
-				B228EA692880B30B00B35F16 /* LoginViewController.swift */,
+				A520227D2ABCDCE800EB97A3 /* Features */,
 				B2CA46CB279350880041B3A5 /* AppDelegate.swift */,
 				B2CA46D42793508A0041B3A5 /* Assets.xcassets */,
 				B2CA46D62793508A0041B3A5 /* LaunchScreen.storyboard */,
@@ -115,7 +205,8 @@
 		B2DEEA31288818470030A8F2 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				B24EED92288ED5740016C233 /* Networking */,
+				A5B3FA752ABC4A2900D27B69 /* MBUI */,
+				A5B3FA742ABC4A2800D27B69 /* Networking */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -137,7 +228,8 @@
 			);
 			name = MoneyBox;
 			packageProductDependencies = (
-				B26EF47728881E7F003BFDF2 /* Networking */,
+				A5B3FA792ABC4A3500D27B69 /* Networking */,
+				A5B3FA7B2ABC4A3500D27B69 /* MBUI */,
 			);
 			productName = MoneyBox;
 			productReference = B2CA46C8279350880041B3A5 /* MoneyBox.app */;
@@ -169,7 +261,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					B2CA46C7279350880041B3A5 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -206,6 +298,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5B3FA762ABC4A2900D27B69 /* Networking in Resources */,
+				A5B3FA772ABC4A2900D27B69 /* MBUI in Resources */,
 				B2CA46D82793508A0041B3A5 /* LaunchScreen.storyboard in Resources */,
 				B2CA47712794D8E50041B3A5 /* LoginSucceed.json in Resources */,
 				B2CA46D52793508A0041B3A5 /* Assets.xcassets in Resources */,
@@ -230,6 +324,13 @@
 			files = (
 				B2CA46CC279350880041B3A5 /* AppDelegate.swift in Sources */,
 				B228EA6B2880B30B00B35F16 /* LoginViewController.swift in Sources */,
+				A52022762ABCADF200EB97A3 /* AccountViewModel.swift in Sources */,
+				A52022732ABCADDB00EB97A3 /* AccountViewController.swift in Sources */,
+				A520227B2ABCDCC500EB97A3 /* LoginRepository.swift in Sources */,
+				A520226E2ABCAD5700EB97A3 /* AccountsViewController.swift in Sources */,
+				A52022682ABCA0F500EB97A3 /* LoginViewModel.swift in Sources */,
+				A52022712ABCADB700EB97A3 /* AccountsViewModel.swift in Sources */,
+				A520226C2ABCA71700EB97A3 /* LoginUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -369,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -510,9 +611,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B26EF47728881E7F003BFDF2 /* Networking */ = {
+		A5B3FA792ABC4A3500D27B69 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;
+		};
+		A5B3FA7B2ABC4A3500D27B69 /* MBUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MBUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
