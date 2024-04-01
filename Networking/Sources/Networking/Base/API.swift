@@ -9,9 +9,9 @@ import Foundation
 
 public enum API {
     static func getURL(with path: String = "") -> URL {
-        return URL(string: ("https://api-test02.moneyboxapp.com\(path)"))!
+        return URL(string: "https://api-test02.moneyboxapp.com\(path)")!
     }
-    
+
     static func getHeaders() -> [String: String] {
         var headers: [String: String] = ["AppId": "8cb2237d0679ca88db6464",
                                          "Content-Type": "application/json",

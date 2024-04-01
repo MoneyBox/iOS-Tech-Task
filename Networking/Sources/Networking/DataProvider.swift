@@ -16,11 +16,11 @@ public class DataProvider: DataProviderLogic {
     public func login(request: LoginRequest, completion: @escaping ((Result<LoginResponse, Error>) -> Void)) {
         API.Login.login(request: request).fetchResponse(completion: completion)
     }
-    
+
     public func fetchProducts(completion: @escaping ((Result<AccountResponse, Error>) -> Void)) {
         API.Account.products.fetchResponse(completion: completion)
     }
-    
+
     public func addMoney(request: OneOffPaymentRequest, completion: @escaping ((Result<OneOffPaymentResponse, Error>) -> Void)) {
         API.Account.addMoney(request: request).fetchResponse(completion: completion)
     }

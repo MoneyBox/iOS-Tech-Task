@@ -8,6 +8,7 @@
 import Foundation
 
 // MARK: - ErrorResponse
+
 public struct ErrorResponse: Codable {
     public let name: String?
     public let message: String?
@@ -18,7 +19,7 @@ public struct ErrorResponse: Codable {
         case message = "Message"
         case validationErrors = "ValidationErrors"
     }
-    
+
     public struct ValidationError: Codable {
         public let name: String?
         public let message: String?
@@ -28,5 +29,4 @@ public struct ErrorResponse: Codable {
             case message = "Message"
         }
     }
-
 }

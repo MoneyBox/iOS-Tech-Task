@@ -11,7 +11,7 @@ public extension API {
     enum Account: AppNetworkable {
         case products
         case addMoney(request: OneOffPaymentRequest)
-        
+
         public var request: URLRequest {
             switch self {
             case .products:

@@ -8,7 +8,7 @@
 import Foundation
 @testable import MoneyBox
 
-struct StubData {
+enum StubData {
     static func read<V: Decodable>(file: String, callback: @escaping (Result<V, Error>) -> Void) {
         if let path = Bundle.main.path(forResource: file, ofType: "json") {
             do {

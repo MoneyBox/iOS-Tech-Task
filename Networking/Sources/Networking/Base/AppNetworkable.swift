@@ -22,7 +22,7 @@ public extension AppNetworkable {
         }
         return request
     }
-    
+
     func getRequest(with path: String, httpMethod: RequestType) -> URLRequest {
         var request = URLRequest(url: API.getURL(with: path))
         request.httpMethod = httpMethod.rawValue
@@ -30,16 +30,16 @@ public extension AppNetworkable {
         request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         return request
     }
-    
+
     func fetchResponse<V: Decodable>(completion: @escaping ((Result<V, Error>) -> Void)) {
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data else {
                     completion(.failure(NSError.error(with: "Data error")))
                     return
                 }
-                
-                print("The response is : ",String(data: data, encoding: .utf8)!)
+
+                print("The response is : ", String(data: data, encoding: .utf8)!)
                 if let error = error {
                     completion(.failure(error))
                 } else {
@@ -49,7 +49,7 @@ public extension AppNetworkable {
                             do {
                                 let result = try JSONDecoder().decode(V.self, from: data)
                                 completion(.success(result))
-                                
+
                             } catch let error as NSError {
                                 print("JSON Decode Error")
                                 completion(.failure(error))
@@ -59,7 +59,7 @@ public extension AppNetworkable {
                                 let result = try JSONDecoder().decode(ErrorResponse.self, from: data)
                                 let message = result.validationErrors?.first?.message ?? result.message ?? ""
                                 completion(.failure(NSError.error(with: message)))
-                                
+
                             } catch {
                                 completion(.failure(NSError.error(with: "Https error code: \(httpStatus.statusCode)")))
                             }
@@ -80,7 +80,7 @@ public extension NSError {
     }
 }
 
-public enum RequestType : String {
+public enum RequestType: String {
     /// HTTP GET request
     case GET
     /// HTTP POST request

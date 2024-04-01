@@ -8,6 +8,7 @@
 import Foundation
 
 // MARK: - AccountResponse
+
 public struct AccountResponse: Codable {
     public let moneyboxEndOfTaxYear: String?
     public let totalPlanValue: Double?
@@ -29,6 +30,7 @@ public struct AccountResponse: Codable {
 }
 
 // MARK: - Account
+
 public struct Account: Codable {
     public let type: String?
     public let name: String?
@@ -48,6 +50,7 @@ public struct Account: Codable {
 }
 
 // MARK: - Milestone
+
 public struct Milestone: Codable {
     public let initialStage: String?
     public let endStage: String?
@@ -61,6 +64,7 @@ public struct Milestone: Codable {
 }
 
 // MARK: - Wrapper
+
 public struct Wrapper: Codable {
     public let id: String?
     public let definitionGlobalID: String?
@@ -82,6 +86,7 @@ public struct Wrapper: Codable {
 }
 
 // MARK: - Returns
+
 public struct Returns: Codable {
     public let simple: Double?
     public let lifetime: Double?
@@ -95,6 +100,7 @@ public struct Returns: Codable {
 }
 
 // MARK: - ProductResponse
+
 public struct ProductResponse: Codable {
     public let id: Int?
     public let assetBoxGlobalID: String?
@@ -144,6 +150,7 @@ public struct ProductResponse: Codable {
 }
 
 // MARK: - AssetBox
+
 public struct AssetBox: Codable {
     public let title: String?
 
@@ -153,6 +160,7 @@ public struct AssetBox: Codable {
 }
 
 // MARK: - Contributions
+
 public struct Contributions: Codable {
     public let status: String?
 
@@ -162,6 +170,7 @@ public struct Contributions: Codable {
 }
 
 // MARK: - InvestorAccount
+
 public struct InvestorAccount: Codable {
     public let contributionsNet: Double?
     public let earningsNet: Double?
@@ -177,6 +186,7 @@ public struct InvestorAccount: Codable {
 }
 
 // MARK: - MoneyboxCircle
+
 public struct MoneyboxCircle: Codable {
     public let state: String?
 
@@ -186,6 +196,7 @@ public struct MoneyboxCircle: Codable {
 }
 
 // MARK: - Personalisation
+
 public struct Personalisation: Codable {
     public let quickAddDeposit: QuickAddDeposit?
     public let hideAccounts: HideAccounts?
@@ -197,6 +208,7 @@ public struct Personalisation: Codable {
 }
 
 // MARK: - HideAccounts
+
 public struct HideAccounts: Codable {
     public let enabled: Bool?
     public let isHidden: Bool?
@@ -210,6 +222,7 @@ public struct HideAccounts: Codable {
 }
 
 // MARK: - QuickAddDeposit
+
 public struct QuickAddDeposit: Codable {
     public let amount: Int?
 
@@ -219,6 +232,7 @@ public struct QuickAddDeposit: Codable {
 }
 
 // MARK: - Product
+
 public struct Product: Codable {
     public let id: Int?
     public let name: String?
@@ -266,6 +280,7 @@ public struct Product: Codable {
 }
 
 // MARK: - Documents
+
 public struct Documents: Codable {
     public let keyFeaturesURL: String?
 
@@ -275,6 +290,7 @@ public struct Documents: Codable {
 }
 
 // MARK: - Fund
+
 public struct Fund: Codable {
     public let fundID: Int?
     public let name: String?
@@ -290,6 +306,7 @@ public struct Fund: Codable {
 }
 
 // MARK: - Lisa
+
 public struct Lisa: Codable {
     public let maximumBonus: Int?
 

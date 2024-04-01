@@ -8,8 +8,8 @@
 import Foundation
 
 // MARK: - OneOffPaymentRequest
+
 public struct OneOffPaymentRequest: Encodable {
-    
     public let amount: Int
     public let investorProductID: Int
 
@@ -17,7 +17,7 @@ public struct OneOffPaymentRequest: Encodable {
         case amount = "Amount"
         case investorProductID = "InvestorProductId"
     }
-    
+
     public init(amount: Int, investorProductID: Int) {
         self.amount = amount
         self.investorProductID = investorProductID

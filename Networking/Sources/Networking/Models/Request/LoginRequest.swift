@@ -8,6 +8,7 @@
 import Foundation
 
 // MARK: - LoginRequest
+
 public struct LoginRequest: Encodable {
     public let email: String
     public let password: String
@@ -18,7 +19,7 @@ public struct LoginRequest: Encodable {
         case password = "Password"
         case idfa = "Idfa"
     }
-    
+
     public init(email: String, password: String) {
         self.email = email
         self.password = password
