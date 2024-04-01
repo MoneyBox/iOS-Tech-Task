@@ -155,7 +155,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     private func handleSuccessfulLogin() {
-        navigationController?.pushViewController(AccountsViewController(), animated: true)
+        let viewModel = AccountsViewModel(user: viewModel.user)
+        let viewController = AccountsViewController(viewModel: viewModel)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
     private func handleFailedLogin(with error: LoginAttemptResponseError) {

@@ -41,6 +41,8 @@ final class LoginViewModel {
     private let sessionManager: SessionManager
     private let dataProvider: DataProvider
 
+    var user: LoginResponse.User?
+
     init(
         sessionManager: SessionManager = SessionManager(),
         dataProvider: DataProvider = DataProvider()
@@ -60,7 +62,8 @@ final class LoginViewModel {
             return
         }
 
-        dataProvider.login(request: LoginRequest(email: email, password: password)) { result in
+        let request = LoginRequest(email: email, password: password)
+        dataProvider.login(request: request) { result in
             let response = switch result {
             case let .success(success): self.handleSuccessfulLogin(for: success)
             case let .failure(failure): self.handleFailedLogin(with: failure)
@@ -79,6 +82,7 @@ final class LoginViewModel {
     }
 
     private func handleSuccessfulLogin(for response: LoginResponse) -> LoginAttemptResponse {
+        user = response.user
         sessionManager.setUserToken(response.session.bearerToken)
 
         return .success
