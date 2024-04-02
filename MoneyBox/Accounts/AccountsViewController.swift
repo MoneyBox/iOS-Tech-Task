@@ -113,7 +113,21 @@ class AccountsViewController: UIViewController {
         dismissLoadingSpinner()
     }
 
-    private func updateUiForFaliure(with _: Error) {
+    private func updateUiForFaliure(with error: Error) {
         dismissLoadingSpinner()
+        
+        let alertController = UIAlertController(
+            title: "Something went wrong",
+            message: "An error occured while attempting to retreive your accounts, please try again",
+            preferredStyle: .alert
+        )
+        
+        let action = UIAlertAction(title: "Try Again", style: .default) { _ in
+            self.viewModel.fetchAccountDetails()
+        }
+        
+        alertController.addAction(action)
+        
+        present(alertController, animated: true)
     }
 }

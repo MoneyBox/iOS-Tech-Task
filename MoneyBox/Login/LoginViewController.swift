@@ -122,9 +122,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             mainStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: .defaultLeadingContstraint),
             mainStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: .defaultTrailingContstraint),
 
-            emailTextField.heightAnchor.constraint(greaterThanOrEqualToConstant: 40),
-            passwordTextField.heightAnchor.constraint(greaterThanOrEqualToConstant: 40),
-            loginButton.heightAnchor.constraint(greaterThanOrEqualToConstant: 40),
+            emailTextField.heightAnchor.constraint(greaterThanOrEqualToConstant: 50),
+            passwordTextField.heightAnchor.constraint(greaterThanOrEqualToConstant: 50),
+            loginButton.heightAnchor.constraint(greaterThanOrEqualToConstant: 60),
         ])
     }
 
