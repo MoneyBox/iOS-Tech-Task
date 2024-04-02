@@ -73,7 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         button.setTitle("Login", for: .normal)
         button.setTitleColor(.white, for: .normal)
 
-        button.backgroundColor = UIColor(resource: .accent)
+        button.backgroundColor = .accent
         button.layer.cornerRadius = 8
 
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)

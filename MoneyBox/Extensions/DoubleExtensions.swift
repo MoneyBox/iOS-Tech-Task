@@ -8,10 +8,20 @@
 import Foundation
 
 extension Double {
-    func formatAsMoney() -> String? {
+    func formatAsMoney() -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.currencyCode = "GBP"
-        return formatter.string(from: NSNumber(value: self))
+        return formatter.string(from: NSNumber(value: self)) ?? "£--.--"
+    }
+}
+
+extension Double? {
+    func formatAsMoney() -> String {
+        if let value = self {
+            return value.formatAsMoney()
+        }
+
+        return "£--.--"
     }
 }

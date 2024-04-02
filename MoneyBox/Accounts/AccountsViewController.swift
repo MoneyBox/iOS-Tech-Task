@@ -24,7 +24,7 @@ class AccountsViewController: UIViewController {
     let mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 20
+        stack.spacing = 32
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -33,6 +33,7 @@ class AccountsViewController: UIViewController {
         let label = UILabel()
         label.text = ""
         label.font = .preferredFont(forTextStyle: .headline)
+        label.adjustsFontForContentSizeCategory = true
         return label
     }()
 
@@ -40,7 +41,16 @@ class AccountsViewController: UIViewController {
         let label = UILabel()
         label.text = ""
         label.font = .preferredFont(forTextStyle: .headline)
+        label.adjustsFontForContentSizeCategory = true
         return label
+    }()
+
+    let accountsStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 16
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
     }()
 
     override func viewDidLoad() {
@@ -62,6 +72,7 @@ class AccountsViewController: UIViewController {
     private func setupViews() {
         mainStack.addArrangedSubview(welcomeLabel)
         mainStack.addArrangedSubview(totalPlanValueLabel)
+        mainStack.addArrangedSubview(accountsStack)
 
         view.addSubview(mainStack)
 
@@ -73,6 +84,8 @@ class AccountsViewController: UIViewController {
     }
 
     private func updateUi(for state: FetchState) {
+        resetUi()
+        
         switch state {
         case .fetching: showLoadingSpinner()
         case .fetched: updateUiForSuccess()
@@ -80,10 +93,22 @@ class AccountsViewController: UIViewController {
         default: return
         }
     }
+    
+    private func resetUi() {
+        welcomeLabel.text = ""
+        totalPlanValueLabel.text = ""
+        accountsStack.arrangedSubviews.forEach( {accountsStack.removeArrangedSubview($0)} )
+    }
 
     private func updateUiForSuccess() {
         welcomeLabel.text = "Welcome \(viewModel.user?.firstName ?? "")!"
         totalPlanValueLabel.text = "Total Plan Value: \(viewModel.getFormattedTotalPlanValue())"
+
+        if let accounts = viewModel.accountResponse?.productResponses {
+            for account in accounts {
+                accountsStack.addArrangedSubview(AccountCard(account: account))
+            }
+        }
 
         dismissLoadingSpinner()
     }

@@ -9,15 +9,13 @@ import UIKit
 
 extension UIViewController {
     func showLoadingSpinner() {
-        let nib = UINib(nibName: "LoadingOverlay", bundle: nil)
-        let customAlert = nib.instantiate(withOwner: self, options: nil).first as! LoadingOverlay
+        let loadingOverlay = LoadingOverlay()
 
         let screen = UIScreen.main.bounds
-        customAlert.center = CGPoint(x: screen.midX, y: screen.midY)
-        customAlert.layer.cornerRadius = 8
-        customAlert.tag = .loadingOverlayTag
+        loadingOverlay.center = CGPoint(x: screen.midX, y: screen.midY)
+        loadingOverlay.tag = .loadingOverlayTag
 
-        view.addSubview(customAlert)
+        view.addSubview(loadingOverlay)
     }
 
     func dismissLoadingSpinner() {
