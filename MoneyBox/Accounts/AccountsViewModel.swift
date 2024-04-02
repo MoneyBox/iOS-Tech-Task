@@ -44,6 +44,10 @@ class AccountsViewModel {
         }
     }
 
+    func getFormattedTotalPlanValue() -> String {
+        accountResponse?.totalPlanValue?.formatAsMoney() ?? "£--.--"
+    }
+
     private func handleSuccessfulFetch(with response: AccountResponse) {
         accountResponse = response
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6574CEB72BBB6A75007DAE96 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574CEB62BBB6A75007DAE96 /* UIViewControllerExtensions.swift */; };
 		6574CEB92BBB6C43007DAE96 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574CEB82BBB6C43007DAE96 /* IntExtensions.swift */; };
+		6574CEBB2BBB7165007DAE96 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574CEBA2BBB7165007DAE96 /* DoubleExtensions.swift */; };
 		6578C0FB2BBB5161008E695F /* AccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6578C0FA2BBB5161008E695F /* AccountsViewModel.swift */; };
 		6578C1002BBB6024008E695F /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6578C0FF2BBB6024008E695F /* LoadingOverlay.swift */; };
 		6578C1022BBB676D008E695F /* LoadingOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6578C1012BBB676D008E695F /* LoadingOverlay.xib */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		6574CEB62BBB6A75007DAE96 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		6574CEB82BBB6C43007DAE96 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
+		6574CEBA2BBB7165007DAE96 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		6578C0FA2BBB5161008E695F /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
 		6578C0FF2BBB6024008E695F /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		6578C1012BBB676D008E695F /* LoadingOverlay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingOverlay.xib; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				65C35C4E2BBB1E3700BE74B7 /* NSPredicateExtensions.swift */,
 				6574CEB62BBB6A75007DAE96 /* UIViewControllerExtensions.swift */,
 				6574CEB82BBB6C43007DAE96 /* IntExtensions.swift */,
+				6574CEBA2BBB7165007DAE96 /* DoubleExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				65C35C4F2BBB1E3700BE74B7 /* NSPredicateExtensions.swift in Sources */,
 				6578C0FB2BBB5161008E695F /* AccountsViewModel.swift in Sources */,
 				B228EA6B2880B30B00B35F16 /* LoginViewController.swift in Sources */,
+				6574CEBB2BBB7165007DAE96 /* DoubleExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

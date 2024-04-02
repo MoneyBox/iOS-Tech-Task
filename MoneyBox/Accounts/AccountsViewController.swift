@@ -36,6 +36,13 @@ class AccountsViewController: UIViewController {
         return label
     }()
 
+    let totalPlanValueLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.font = .preferredFont(forTextStyle: .headline)
+        return label
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,12 +61,12 @@ class AccountsViewController: UIViewController {
 
     private func setupViews() {
         mainStack.addArrangedSubview(welcomeLabel)
+        mainStack.addArrangedSubview(totalPlanValueLabel)
 
         view.addSubview(mainStack)
 
         NSLayoutConstraint.activate([
-            mainStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            mainStack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            mainStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
             mainStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: .defaultLeadingContstraint),
             mainStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: .defaultTrailingContstraint),
         ])
@@ -76,6 +83,7 @@ class AccountsViewController: UIViewController {
 
     private func updateUiForSuccess() {
         welcomeLabel.text = "Welcome \(viewModel.user?.firstName ?? "")!"
+        totalPlanValueLabel.text = "Total Plan Value: \(viewModel.getFormattedTotalPlanValue())"
 
         dismissLoadingSpinner()
     }
