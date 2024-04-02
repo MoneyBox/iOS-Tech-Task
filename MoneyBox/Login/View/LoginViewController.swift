@@ -86,8 +86,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return button
     }()
 
-    // MARK: - Lifecycle Methods
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -103,8 +101,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.text = "P455word12"
         #endif
     }
-
-    // MARK: - Private Methods
 
     private func setupViews() {
         formStack.addArrangedSubview(emailTextField)
@@ -144,6 +140,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     private func login() {
+        showLoadingSpinner()
+
         if let email = emailTextField.text, let password = passwordTextField.text {
             viewModel.login(email: email, password: password) { response in
                 switch response {
@@ -155,12 +153,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     private func handleSuccessfulLogin() {
+        dismissLoadingSpinner()
+
         let viewModel = AccountsViewModel(user: viewModel.user)
         let viewController = AccountsViewController(viewModel: viewModel)
         navigationController?.pushViewController(viewController, animated: true)
     }
 
     private func handleFailedLogin(with error: LoginAttemptResponseError) {
+        dismissLoadingSpinner()
+
         let alertController = UIAlertController(title: error.alertTitle, message: error.alertDescription, preferredStyle: .alert)
 
         alertController.addAction(

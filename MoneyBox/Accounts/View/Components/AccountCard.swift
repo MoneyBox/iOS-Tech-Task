@@ -11,6 +11,8 @@ import UIKit
 class AccountCard: UIView {
     private var account: ProductResponse?
 
+    private var onClickCallback: (() -> Void)?
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .headline)
@@ -40,9 +42,9 @@ class AccountCard: UIView {
         label.adjustsFontForContentSizeCategory = true
         return label
     }()
-    
+
     private let stackView: UIStackView = {
-       let stack = UIStackView()
+        let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 8
         stack.backgroundColor = .clear
@@ -51,8 +53,9 @@ class AccountCard: UIView {
         return stack
     }()
 
-    init(account: ProductResponse) {
+    init(account: ProductResponse, onClickCallback: @escaping () -> Void) {
         self.account = account
+        self.onClickCallback = onClickCallback
 
         super.init(frame: .zero)
 
@@ -62,19 +65,17 @@ class AccountCard: UIView {
     }
 
     required init?(coder: NSCoder) {
-        self.account = nil
-
         super.init(coder: coder)
     }
 
     private func setupViews() {
         backgroundColor = .accent
         layer.cornerRadius = 8
-        
+
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(planValueLabel)
         stackView.addArrangedSubview(moneyboxLabel)
-        
+
         addSubview(stackView)
 
         NSLayoutConstraint.activate([
@@ -92,9 +93,8 @@ class AccountCard: UIView {
 
         if let planValue = account?.planValue {
             planValueLabel.text = "Plan value: \(planValue.formatAsMoney())"
-            
         }
-        
+
         if let moneybox = account?.moneybox {
             moneyboxLabel.text = "Moneybox: \(moneybox.formatAsMoney())"
         }
@@ -107,12 +107,6 @@ class AccountCard: UIView {
     }
 
     @objc private func onClick() {
-        let accountDetailViewController = UIViewController()
-
-        if let keyWindow = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first,
-           let topViewController = keyWindow.rootViewController
-        {
-            topViewController.present(accountDetailViewController, animated: true)
-        }
+        onClickCallback?()
     }
 }

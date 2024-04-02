@@ -11,20 +11,18 @@ import UIKit
 class AccountsViewController: UIViewController {
     let viewModel: AccountsViewModel
 
-    init(viewModel: AccountsViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        viewModel = AccountsViewModel()
-        super.init(coder: coder)
-    }
-
     let mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 32
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    let labelsStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 16
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -53,6 +51,18 @@ class AccountsViewController: UIViewController {
         return stack
     }()
 
+    init(viewModel: AccountsViewModel) {
+        self.viewModel = viewModel
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        viewModel = AccountsViewModel()
+
+        super.init(coder: coder)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -70,8 +80,10 @@ class AccountsViewController: UIViewController {
     }
 
     private func setupViews() {
-        mainStack.addArrangedSubview(welcomeLabel)
-        mainStack.addArrangedSubview(totalPlanValueLabel)
+        labelsStack.addArrangedSubview(welcomeLabel)
+        labelsStack.addArrangedSubview(totalPlanValueLabel)
+
+        mainStack.addArrangedSubview(labelsStack)
         mainStack.addArrangedSubview(accountsStack)
 
         view.addSubview(mainStack)
@@ -85,7 +97,7 @@ class AccountsViewController: UIViewController {
 
     private func updateUi(for state: FetchState) {
         resetUi()
-        
+
         switch state {
         case .fetching: showLoadingSpinner()
         case .fetched: updateUiForSuccess()
@@ -93,11 +105,11 @@ class AccountsViewController: UIViewController {
         default: return
         }
     }
-    
+
     private func resetUi() {
         welcomeLabel.text = ""
         totalPlanValueLabel.text = ""
-        accountsStack.arrangedSubviews.forEach( {accountsStack.removeArrangedSubview($0)} )
+        accountsStack.arrangedSubviews.forEach { accountsStack.removeArrangedSubview($0) }
     }
 
     private func updateUiForSuccess() {
@@ -106,28 +118,34 @@ class AccountsViewController: UIViewController {
 
         if let accounts = viewModel.accountResponse?.productResponses {
             for account in accounts {
-                accountsStack.addArrangedSubview(AccountCard(account: account))
+                accountsStack.addArrangedSubview(
+                    AccountCard(account: account) {
+                        let viewModel = AccountDetailsViewModel(account: account)
+                        let viewController = AccountDetailsViewController(viewModel: viewModel)
+                        self.navigationController?.pushViewController(viewController, animated: true)
+                    }
+                )
             }
         }
 
         dismissLoadingSpinner()
     }
 
-    private func updateUiForFaliure(with error: Error) {
+    private func updateUiForFaliure(with _: Error) {
         dismissLoadingSpinner()
-        
+
         let alertController = UIAlertController(
             title: "Something went wrong",
             message: "An error occured while attempting to retreive your accounts, please try again",
             preferredStyle: .alert
         )
-        
+
         let action = UIAlertAction(title: "Try Again", style: .default) { _ in
             self.viewModel.fetchAccountDetails()
         }
-        
+
         alertController.addAction(action)
-        
+
         present(alertController, animated: true)
     }
 }
