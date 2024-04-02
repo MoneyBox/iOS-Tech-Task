@@ -37,14 +37,11 @@ enum LoginAttemptResponse {
     case failure(_ error: LoginAttemptResponseError)
 }
 
-final class LoginViewModel {
+class LoginViewModel {
     private let sessionManager: SessionManager
     private let dataProvider: DataProviderLogic
 
-    init(
-        sessionManager: SessionManager = SessionManager(),
-        dataProvider: DataProviderLogic = DataProvider()
-    ) {
+    init(sessionManager: SessionManager = SessionManager(), dataProvider: DataProviderLogic = DataProvider()) {
         self.sessionManager = sessionManager
         self.dataProvider = dataProvider
     }

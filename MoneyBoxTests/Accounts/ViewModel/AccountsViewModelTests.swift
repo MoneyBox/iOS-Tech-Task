@@ -12,7 +12,7 @@ import Networking
 final class AccountsViewModelTests: XCTestCase {
     var target: AccountsViewModel!
 
-    func shouldSetAccountResponseOnSuccess() throws {
+    func testShouldSetAccountResponseOnSuccess() throws {
         let dataProvider = SuccessDataProvider()
         target = AccountsViewModel(dataProvider: dataProvider)
         
@@ -21,7 +21,7 @@ final class AccountsViewModelTests: XCTestCase {
         XCTAssertNotNil(target.accountResponse)
     }
     
-    func shouldNotSetAccountResponseOnFailure() throws {
+    func testShouldNotSetAccountResponseOnFailure() throws {
         let dataProvider = FailureDataProvider()
         target = AccountsViewModel(dataProvider: dataProvider)
         
@@ -30,7 +30,7 @@ final class AccountsViewModelTests: XCTestCase {
         XCTAssertNil(target.accountResponse)
     }
 
-    func shouldFormatAccountResponseValueCorrectlyWhenValueExists() throws {
+    func testShouldFormatAccountResponseValueCorrectlyWhenValueExists() throws {
         let dataProvider = SuccessDataProvider()
         target = AccountsViewModel(dataProvider: dataProvider)
         target.fetchAccountDetails()
@@ -40,7 +40,7 @@ final class AccountsViewModelTests: XCTestCase {
         XCTAssertEqual(result, "£100.00")
     }
     
-    func shouldFormatAccountResponseValueCorrectlyWhenValueNil() throws {
+    func testShouldFormatAccountResponseValueCorrectlyWhenValueNil() throws {
         let dataProvider = FailureDataProvider()
         target = AccountsViewModel(dataProvider: dataProvider)
         target.fetchAccountDetails()

@@ -28,13 +28,13 @@ public struct AccountResponse: Codable {
         case accounts = "Accounts"
     }
 
-    public init(totalPlanValue: Double? = nil) {
+    public init(totalPlanValue: Double? = nil, productResponses: [ProductResponse]? = nil) {
         moneyboxEndOfTaxYear = nil
         self.totalPlanValue = totalPlanValue
         totalEarnings = nil
         totalContributionsNet = nil
         totalEarningsAsPercentage = nil
-        productResponses = nil
+        self.productResponses = productResponses
         accounts = nil
     }
 }
@@ -156,6 +156,30 @@ public struct ProductResponse: Codable {
         case isSwitchVisible = "IsSwitchVisible"
         case state = "State"
         case dateCreated = "DateCreated"
+    }
+    
+    public init(id: Int? = nil) {
+        self.id = id
+        assetBoxGlobalID = nil
+        planValue = nil
+        moneybox = nil
+        subscriptionAmount = nil
+        totalFees = nil
+        isSelected = nil
+        isFavourite = nil
+        collectionDayMessage = nil
+        wrapperID = nil
+        isCashBox = nil
+        pendingInstantBankTransferAmount = nil
+        assetBox = nil
+        product = nil
+        investorAccount = nil
+        personalisation = nil
+        contributions = nil
+        moneyboxCircle = nil
+        isSwitchVisible = nil
+        state = nil
+        dateCreated = nil
     }
 }
 

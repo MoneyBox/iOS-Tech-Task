@@ -14,7 +14,7 @@ class SuccessDataProvider: DataProviderLogic {
         user: LoginResponse.User(firstName: "John", lastName: "Doe")
     )
 
-    public let mockAccountResponse = AccountResponse(totalPlanValue: 100.0)
+    public let mockAccountResponse = AccountResponse(totalPlanValue: 100.0, productResponses: [ProductResponse(id: 123)])
 
     public let mockOneOffPaymentResponse = OneOffPaymentResponse()
 
@@ -41,7 +41,7 @@ class FailureDataProvider: DataProviderLogic {
         user: LoginResponse.User(firstName: "John", lastName: "Doe")
     )
 
-    public let mockAccountResponse = AccountResponse()
+    public let mockAccountResponse = AccountResponse(totalPlanValue: 100.0, productResponses: [ProductResponse(id: 123)])
 
     public let mockOneOffPaymentResponse = OneOffPaymentResponse()
 
