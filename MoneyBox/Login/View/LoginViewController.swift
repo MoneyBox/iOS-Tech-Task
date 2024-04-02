@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Networking
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     let viewModel: LoginViewModel = .init()
@@ -145,17 +146,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if let email = emailTextField.text, let password = passwordTextField.text {
             viewModel.login(email: email, password: password) { response in
                 switch response {
-                case .success: self.handleSuccessfulLogin()
+                case .success(let user): self.handleSuccessfulLogin(for: user)
                 case let .failure(error): self.handleFailedLogin(with: error)
                 }
             }
         }
     }
 
-    private func handleSuccessfulLogin() {
+    private func handleSuccessfulLogin(for user: LoginResponse.User) {
         dismissLoadingSpinner()
 
-        let viewModel = AccountsViewModel(user: viewModel.user)
+        let viewModel = AccountsViewModel(user: user)
         let viewController = AccountsViewController(viewModel: viewModel)
         navigationController?.pushViewController(viewController, animated: true)
     }

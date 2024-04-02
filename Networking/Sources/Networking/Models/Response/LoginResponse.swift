@@ -24,6 +24,10 @@ public struct LoginResponse: Decodable {
         enum CodingKeys: String, CodingKey {
             case bearerToken = "BearerToken"
         }
+
+        public init(bearerToken: String) {
+            self.bearerToken = bearerToken
+        }
     }
 
     // MARK: - User
@@ -36,5 +40,15 @@ public struct LoginResponse: Decodable {
             case firstName = "FirstName"
             case lastName = "LastName"
         }
+
+        public init(firstName: String, lastName: String) {
+            self.firstName = firstName
+            self.lastName = lastName
+        }
+    }
+
+    public init(session: Session, user: User) {
+        self.session = session
+        self.user = user
     }
 }

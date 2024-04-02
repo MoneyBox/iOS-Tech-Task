@@ -13,4 +13,8 @@ public struct OneOffPaymentResponse: Decodable {
     enum CodingKeys: String, CodingKey {
         case moneybox = "Moneybox"
     }
+
+    public init(moneybox: Double? = nil) {
+        self.moneybox = moneybox
+    }
 }

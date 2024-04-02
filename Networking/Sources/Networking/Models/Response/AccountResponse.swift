@@ -27,6 +27,16 @@ public struct AccountResponse: Codable {
         case productResponses = "ProductResponses"
         case accounts = "Accounts"
     }
+
+    public init(totalPlanValue: Double? = nil) {
+        moneyboxEndOfTaxYear = nil
+        self.totalPlanValue = totalPlanValue
+        totalEarnings = nil
+        totalContributionsNet = nil
+        totalEarningsAsPercentage = nil
+        productResponses = nil
+        accounts = nil
+    }
 }
 
 // MARK: - Account

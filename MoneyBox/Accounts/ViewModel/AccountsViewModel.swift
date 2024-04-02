@@ -16,7 +16,7 @@ enum FetchState {
 }
 
 class AccountsViewModel {
-    let dataProvider: DataProvider
+    let dataProvider: DataProviderLogic
 
     var user: LoginResponse.User?
     var updateUiHook: ((FetchState) -> Void)?
@@ -28,7 +28,7 @@ class AccountsViewModel {
         }
     }
 
-    init(dataProvider: DataProvider = DataProvider(), user: LoginResponse.User? = nil) {
+    init(dataProvider: DataProviderLogic = DataProvider(), user: LoginResponse.User? = nil) {
         self.dataProvider = dataProvider
         self.user = user
     }

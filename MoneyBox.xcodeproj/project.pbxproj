@@ -14,6 +14,8 @@
 		6574CEBF2BBC6ECE007DAE96 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574CEBE2BBC6ECE007DAE96 /* UIColorExtensions.swift */; };
 		6574CEC32BBC8523007DAE96 /* AccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574CEC22BBC8523007DAE96 /* AccountDetailsViewController.swift */; };
 		6574CEC92BBC90C5007DAE96 /* AccountDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574CEC82BBC90C5007DAE96 /* AccountDetailsViewModel.swift */; };
+		6574CECD2BBC9BB7007DAE96 /* AccountsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574CECC2BBC9BB7007DAE96 /* AccountsViewModelTests.swift */; };
+		6574CED22BBC9C76007DAE96 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574CED12BBC9C76007DAE96 /* MockDataProvider.swift */; };
 		6578C0FB2BBB5161008E695F /* AccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6578C0FA2BBB5161008E695F /* AccountsViewModel.swift */; };
 		6578C1002BBB6024008E695F /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6578C0FF2BBB6024008E695F /* LoadingOverlay.swift */; };
 		657EE7B22BB9F07D0020ABA4 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657EE7B12BB9F07D0020ABA4 /* AccountsViewController.swift */; };
@@ -49,6 +51,8 @@
 		6574CEBE2BBC6ECE007DAE96 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		6574CEC22BBC8523007DAE96 /* AccountDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewController.swift; sourceTree = "<group>"; };
 		6574CEC82BBC90C5007DAE96 /* AccountDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewModel.swift; sourceTree = "<group>"; };
+		6574CECC2BBC9BB7007DAE96 /* AccountsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModelTests.swift; sourceTree = "<group>"; };
+		6574CED12BBC9C76007DAE96 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
 		6578C0FA2BBB5161008E695F /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
 		6578C0FF2BBB6024008E695F /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		657EE7B12BB9F07D0020ABA4 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,30 @@
 				65C35C4C2BBB1C3D00BE74B7 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6574CECA2BBC9B90007DAE96 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				6574CECB2BBC9B97007DAE96 /* ViewModel */,
+			);
+			path = Accounts;
+			sourceTree = "<group>";
+		};
+		6574CECB2BBC9B97007DAE96 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6574CECC2BBC9BB7007DAE96 /* AccountsViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6574CED02BBC9C60007DAE96 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				6574CED12BBC9C76007DAE96 /* MockDataProvider.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		6578C0FC2BBB5FDF008E695F /* Components */ = {
@@ -200,6 +228,8 @@
 		B2CA46E12793508A0041B3A5 /* MoneyBoxTests */ = {
 			isa = PBXGroup;
 			children = (
+				6574CED02BBC9C60007DAE96 /* Mock */,
+				6574CECA2BBC9B90007DAE96 /* Accounts */,
 				B2CA47662794D69A0041B3A5 /* StubData.swift */,
 				B2CA47682794D6AC0041B3A5 /* ResponseJsons */,
 			);
@@ -353,6 +383,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6574CECD2BBC9BB7007DAE96 /* AccountsViewModelTests.swift in Sources */,
+				6574CED22BBC9C76007DAE96 /* MockDataProvider.swift in Sources */,
 				B2CA47672794D69A0041B3A5 /* StubData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

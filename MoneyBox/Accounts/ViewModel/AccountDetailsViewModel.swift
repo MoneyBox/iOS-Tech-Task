@@ -9,10 +9,10 @@ import Foundation
 import Networking
 
 class AccountDetailsViewModel {
-    let dataProvider: DataProvider
+    let dataProvider: DataProviderLogic
     let account: ProductResponse?
 
-    init(dataProvider: DataProvider = DataProvider(), account: ProductResponse? = nil) {
+    init(dataProvider: DataProviderLogic = DataProvider(), account: ProductResponse? = nil) {
         self.dataProvider = dataProvider
         self.account = account
     }

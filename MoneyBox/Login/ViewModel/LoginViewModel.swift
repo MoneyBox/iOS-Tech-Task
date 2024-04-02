@@ -33,19 +33,17 @@ enum LoginAttemptResponseError {
 }
 
 enum LoginAttemptResponse {
-    case success
+    case success(_ user: LoginResponse.User)
     case failure(_ error: LoginAttemptResponseError)
 }
 
 final class LoginViewModel {
     private let sessionManager: SessionManager
-    private let dataProvider: DataProvider
-
-    var user: LoginResponse.User?
+    private let dataProvider: DataProviderLogic
 
     init(
         sessionManager: SessionManager = SessionManager(),
-        dataProvider: DataProvider = DataProvider()
+        dataProvider: DataProviderLogic = DataProvider()
     ) {
         self.sessionManager = sessionManager
         self.dataProvider = dataProvider
@@ -82,10 +80,9 @@ final class LoginViewModel {
     }
 
     private func handleSuccessfulLogin(for response: LoginResponse) -> LoginAttemptResponse {
-        user = response.user
         sessionManager.setUserToken(response.session.bearerToken)
 
-        return .success
+        return .success(response.user)
     }
 
     private func handleFailedLogin(with error: Error) -> LoginAttemptResponse {
