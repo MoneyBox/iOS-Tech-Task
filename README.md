@@ -53,6 +53,22 @@ dataProvider.login(request: request, completion: completion)
 request: Initialize your request model </br>
 Completion: Handle your API success and failure cases
 
+## Unit Tests
+The MoneyBoxTests folder includes stubbed data to easily mock the responses needed for unit testing
+
+#### Usage Hint
+You can create a DataProviderMock class via inject DataProviderLogic protocol </br>
+You can mock response in Login.json file like this:
+```
+StubData.read(file: "Login", callback: completion)
+```
+
+### Troubleshooting
+#### Account limit reached
+If you encounter any account limit errors when depositing, please try depositing into a different account.</br>
+For "ISA" accounts, you may encounter a yearly allowance limit error. Please try depositing into one of the Savings accounts open, such as "Simple Saver".</br></br>
+If you're still encountering issues after trying the above, please reach out and we can refresh the test user. 
+
 #### App version error
 
 It's possible while working on the project that you may encounter an error from the API:
@@ -65,18 +81,9 @@ It's possible while working on the project that you may encounter an error from 
 ```
 To resolve please update the app version of your project to match the version of the latest Moneybox app in the app store. 
 
-## Unit Tests
-The MoneyBoxTests folder includes stubbed data to easily mock the responses needed for unit testing
-
-#### Usage Hint
-You can create a DataProviderMock class via inject DataProviderLogic protocol </br>
-You can mock response in Login.json file like this:
-```
-StubData.read(file: "Login", callback: completion)
-```
-
 ### How to Submit your solution:
- - To share your Github repository with the user valerio-bettini.
+ - To share your Github repository with the user ashleyhenderson / ashley.henderson@moneyboxapp.com.
+ - Ensure your repository can be cloned / downloaded.
  - (Optional) Provide a readme in markdown which outlines your solution.
 
 ## Good luck!
